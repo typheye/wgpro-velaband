@@ -26,6 +26,8 @@
 					>
 						<image class="fun-img" src="/common/mipmap/a20.png" />
 					</div>
+				</div>
+				<div class="fun-list3">
 					<div
 						class="fun-item"
 						style="background-color: {{ fc_v3 }}"
@@ -35,8 +37,6 @@
 					>
 						<image class="fun-img" src="/common/mipmap/a37.png" />
 					</div>
-				</div>
-				<div class="fun-list3">
 					<div
 						class="fun-item"
 						style="background-color: {{ fc_v4 }}"
@@ -46,6 +46,8 @@
 					>
 						<image class="fun-img" src="/common/mipmap/a40.png" />
 					</div>
+				</div>
+				<div class="fun-list3">
 					<div
 						class="fun-item"
 						style="background-color: {{ fc_v5 }}"
@@ -81,6 +83,7 @@
 						ontouchstart="ht(1, 'v8')"
 						ontouchend="ht(0, 'v8')"
 						onclick="toRun('backlaunch')"
+						if="false"
 					>
 						<image class="fun-img" src="/common/mipmap/a46.png" />
 					</div>

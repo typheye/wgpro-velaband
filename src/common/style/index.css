@@ -13,8 +13,8 @@
 }
 
 .splash-logo {
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
 }
 
 .tab {
@@ -39,17 +39,17 @@
 }
 
 .tab-back {
-	width: 27%;
+	width: 20%;
 	height: auto;
-	padding-left: 20px;
+	padding-left: 5px;
 	color: white;
-	text-align: right;
+	text-align: center;
 	font-size: 30px;
 	font-weight: bold;
 }
 
 .tab-text {
-	width: 44%;
+	width: 60%;
 	height: auto;
 	color: white;
 	text-align: center;
@@ -58,9 +58,9 @@
 }
 
 .tab-more {
-	width: 27%;
+	width: 20%;
 	height: auto;
-	padding-right: 20px;
+	padding-right: 5px;
 	color: white;
 	text-align: right;
 	font-size: 30px;
@@ -101,8 +101,8 @@
 }
 
 .fun-item-th {
-	width: 80px;
-	height: 80px;
+	width: 100px;
+	height: 100px;
 	padding: 10px;
 	margin: 5px;
 	flex-direction: column;
@@ -120,13 +120,13 @@
 }
 
 .exit-QR {
-	width: 60%;
+	width: 100%;
 	height: auto;
 	margin-top: 20px;
 }
 
 .exit-tip-text {
-	width: 80%;
+	width: 100%;
 	height: auto;
 	color: #7b7b7b;
 	text-align: center;
@@ -135,7 +135,7 @@
 }
 
 .exit-tip-text-a {
-	width: 80%;
+	width: 100%;
 	height: auto;
 	color: #32618D;
 	text-align: center;
@@ -207,7 +207,7 @@
 }
 
 .edittext-div {
-	width: 65%;
+	width: 90%;
 	height: 15%;
 	color: white;
 	border-radius: 30px;
@@ -228,7 +228,7 @@
 
 .edittext2-div {
 	margin-top: 20px;
-	width: 70%;
+	width: 90%;
 	height: 20%;
 	color: white;
 	border-radius: 30px;
