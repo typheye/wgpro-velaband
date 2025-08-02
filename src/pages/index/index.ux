@@ -1,0 +1,41 @@
+<template>
+	<div class="page" @swipe="right">
+		<image class="splash-logo" src="/common/mipmap/ic_splash.png" />
+	</div>
+</template>
+
+<script>
+import storage from "@system.storage";
+export default {
+	onBackPress() {
+		this.$app.$def.toCancel(false);
+		return true;
+	},
+	onReady() {
+		setTimeout(this.launch(), 1000);
+	},
+	launch() {
+		storage.get({
+			key: "wgsettings_init",
+			success: (data) => {
+				if (data == "true") {
+					this.$app.$def.settingsChange(
+						"wgsettings_autoCheckUpdateIsShow",
+						"false"
+					);
+					this.$app.$def.goReplacePage("/pages/ui/home");
+				} else {
+					this.$app.$def.goReplacePage("/pages/ui/popup/init");
+				}
+			},
+			fail: () => {
+				this.$app.$def.goReplacePage("/pages/ui/popup/init");
+			},
+		});
+	},
+};
+</script>
+
+<style>
+@import "../../common/style/index.css";
+</style>

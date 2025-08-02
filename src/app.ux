@@ -1,0 +1,149 @@
+<script>
+import router from "@system.router";
+import vibrator from "@system.vibrator";
+import app from "@system.app";
+import storage from "@system.storage";
+export default {
+	onCreate() {
+		console.log("app created");
+	},
+	onDestroy() {
+		console.log("app destroyed");
+	},
+	goBack() {
+		router.back();
+	},
+	goPageWithParams(_uri, _params) {
+		router.push({
+			uri: _uri,
+			params: _params,
+		});
+	},
+	goPage(_uri) {
+		router.push({
+			uri: _uri,
+		});
+	},
+	goReplacePage(_uri) {
+		router.replace({
+			uri: _uri,
+		});
+	},
+	goReplacePageWithParams(_uri, _params) {
+		router.replace({
+			uri: _uri,
+			params: _params,
+		});
+	},
+	toTips(_title, _text) {
+		router.push({
+			uri: "/pages/ui/popup/tips",
+			params: {
+				title: _title,
+				text: _text,
+			},
+		});
+	},
+	toTipsWithQR(_title, _text, _uri) {
+		router.push({
+			uri: "/pages/ui/popup/showqr",
+			params: {
+				title: _title,
+				text: _text,
+				uri: _uri,
+			},
+		});
+	},
+	toCancel(can) {
+		this.shortVib(true);
+		if (can) router.back();
+	},
+	toExit() {
+		app.terminate();
+	},
+	getAppinfo() {
+		return app.getInfo();
+	},
+	textFormat(template, data) {
+		return template.replace(/\${(\w+)}/g, (_, key) => data[key] || "");
+	},
+	shortVib(can) {
+		var _mode = "long";
+		if (can) _mode = "short";
+		vibrator.vibrate({
+			mode: _mode,
+		});
+	},
+	formatDecimal(num, decimalPlaces = 1) {
+		if (typeof num !== "number" || isNaN(num)) return 123;
+		const n = Math.max(0, Math.floor(decimalPlaces));
+		if (n === 0) return Math.round(num).toString();
+		return num.toFixed(n);
+	},
+	taccountInit() {
+		//wgsettings_taccount_username Typheye账户Username
+		this.settingsChange("wgsettings_taccount_username", "");
+		//wgsettings_taccount_password Typheye账户Password
+		this.settingsChange("wgsettings_taccount_password", "");
+		//wgsettings_taccount_cookie Typheye账户Cookie
+		this.settingsChange("wgsettings_taccount_cookie", "");
+		//wgsettings_taccount_nick Typheye账户Nick
+		this.settingsChange("wgsettings_taccount_nick", "");
+		//wgsettings_taccount_nick Typheye账户Userinfo
+		this.settingsChange("wgsettings_taccount_userinfo", "");
+
+		//wgsettings_taccount_allowShare Typheye账户允许授权
+		this.settingsChange("wgsettings_taccount_allowShare", "false");
+	},
+	wgchatInit() {
+		const arr = [
+			{ id: "10001", name: "官方聊天室" },
+			{ id: "10002", name: "用户反馈" },
+		];
+		const roomlist = JSON.stringify(arr, null);
+		//wgsettings_wgchat_roomlist 腕上微聊聊天室列表
+		this.settingsChange("wgsettings_wgchat_roomlist", roomlist);
+	},
+	settingsInit() {
+		//wgsettings_init 初始化
+		this.settingsChange("wgsettings_init", "true");
+		//wgsettings_autoCheckUpdate 自动检测更新
+		this.settingsChange("wgsettings_autoCheckUpdate", "true");
+		//wgsettings_autoCheckUpdateIsShow 自动检测更新是否已经显示
+		this.settingsChange("wgsettings_autoCheckUpdateIsShow", "false");
+		//其他初始化
+		this.wgchatInit();
+		this.taccountInit();
+	},
+	settingsReset() {
+		storage.clear({
+			success: () => {
+				console.log("handling success");
+			},
+			fail: (code) => {
+				console.log(`handling fail, code = ${code}`);
+			},
+		});
+	},
+	settingsChange(_key, _data) {
+		storage.set({
+			key: _key,
+			value: _data + "",
+			success: () => {
+				console.log("handling success");
+			},
+			fail: (code) => {
+				console.log(`handling fail, code = ${code}`);
+			},
+		});
+	},
+	isNumeric(str) {
+		for (let i = 0; i < str.length; i++) {
+			if (str[i] < "0" || str[i] > "9") {
+				return false;
+			}
+		}
+		return str.length > 0; // 空字符串返回false
+	},
+};
+</script>
