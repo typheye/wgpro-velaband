@@ -1,4 +1,4 @@
-# wgpro-velaband - 腕管Pro 小米手环端
+# wgpro-velaband
 
 适用于搭载Vela系统的小米智能手环的腕管Pro
 
