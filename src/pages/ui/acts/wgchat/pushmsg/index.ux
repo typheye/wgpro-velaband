@@ -110,6 +110,7 @@ export default {
 					code: "",
 					uid: this.usrUid,
 				},
+				data_text: `name="${this.usrNick}"&value="${this.inputValues["msg"]}"&code=&uid="${this.usrUid}"`,
 				method: "POST",
 				responseType: "text",
 				success: (response) => {
