@@ -192,8 +192,8 @@
 </template>
 
 <script>
-import storage from "@system.storage";
-import fetch from "@system.fetch";
+import storage from "../../../../../utils/storage.js";
+import fetch from "../../../../../utils/fetch.js";
 export default {
 	private: {
 		itc_p0v0: "#3c3c3c",
@@ -252,7 +252,7 @@ export default {
 		storage.get({
 			key: "wgsettings_autoCheckUpdate",
 			success: (data) => {
-				if (data == "true") this.swit_it1_state = true;
+				if (data) this.swit_it1_state = true;
 			},
 		});
 	},

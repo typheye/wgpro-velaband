@@ -64,15 +64,15 @@
 </template>
 
 <script>
-import fetch from "@system.fetch";
-import storage from "@system.storage";
+import fetch from "../../../../../utils/fetch.js";
+import storage from "../../../../../utils/storage.js";
 import file from "@system.file";
 export default {
 	private: {
 		roommsgList: [],
 		roomName: "",
 		roomId: "",
-		roomDB: "internal://files/wgpro/chat/",
+		roomDB: "internal://files/wgchat/",
 		taccUid: "",
 		isToBottom: false,
 	},
@@ -120,10 +120,10 @@ export default {
 	},
 	msgListReady() {
 		file.access({
-			uri: this.roomDB + this.roomId,
+			uri: this.roomDB + this.roomId + ".json",
 			success: () =>
 				file.readText({
-					uri: this.roomDB + this.roomId,
+					uri: this.roomDB + this.roomId + ".json",
 					success: (data) => this.msgLoad(data.text),
 					fail: (code) => (
 						this.toBack(),
@@ -141,7 +141,7 @@ export default {
 			success: (response) => {
 				if (response.code == 200) {
 					file.writeText({
-						uri: this.roomDB + this.roomId,
+						uri: this.roomDB + this.roomId + ".json",
 						text: response.data,
 						success: () => this.msgLoad(response.data),
 						fail: (code) => {

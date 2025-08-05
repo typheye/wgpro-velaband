@@ -79,16 +79,6 @@
 					</div>
 					<div
 						class="fun-item"
-						style="background-color: {{ fc_v8 }}"
-						ontouchstart="ht(1, 'v8')"
-						ontouchend="ht(0, 'v8')"
-						onclick="toRun('backlaunch')"
-						if="false"
-					>
-						<image class="fun-img" src="/common/mipmap/a46.png" />
-					</div>
-					<div
-						class="fun-item"
 						style="background-color: {{ fc_v9 }}"
 						ontouchstart="ht(1, 'v9')"
 						ontouchend="ht(0, 'v9')"
@@ -104,8 +94,8 @@
 </template>
 
 <script>
-import storage from "@system.storage";
-import fetch from "@system.fetch";
+import storage from "../../../utils/storage.js";
+import fetch from "../../../utils/fetch.js";
 export default {
 	private: {
 		str1: "",
@@ -118,6 +108,7 @@ export default {
 		fc_v7: "#3c3c3c",
 		fc_v8: "#3c3c3c",
 		fc_v9: "#3c3c3c",
+		fc_v10: "#3c3c3c",
 		isPopUpdate: false,
 	},
 	ht(t, i) {
@@ -156,7 +147,7 @@ export default {
 		storage.get({
 			key: "wgsettings_autoCheckUpdate",
 			success: (data) => {
-				if (data == "true") {
+				if (data) {
 					var appinfos = this.$app.$def.getAppinfo();
 					const myvercode = appinfos.versionCode;
 					fetch.fetch({

@@ -74,7 +74,7 @@
 
 <script>
 import file from "@system.file";
-import storage from "@system.storage";
+import storage from "../../../../utils/storage.js";
 export default {
 	private: {
 		chatroomList: [],
@@ -85,7 +85,7 @@ export default {
 		roomlistJSON: "",
 		tabtext: "",
 		tabtextleft: "‹",
-		roomDB: "internal://files/wgpro/chat/",
+		roomDB: "internal://files/wgchat/",
 	},
 	ht(t, i) {
 		if (t) eval("this.chatroomList[" + i + "]['color'] = 'black'");
@@ -107,8 +107,8 @@ export default {
 		this.opmenu(false);
 	},
 	onReady() {
-		this.chatroomListReady();
 		this.chatroommenuListReady();
+		this.chatroomListReady();
 	},
 	toBack() {
 		if (!this.isMenu) this.$app.$def.goBack();
@@ -135,16 +135,18 @@ export default {
 			needoffmenu = false;
 			this.$app.$def.goBack();
 		} else if (id == "back");
-		else if (id == "update") this.chatroomListReady();
+		else if (id == "update")
+			this.$app.$def.goReplacePage("/pages/ui/function/wgchat");
 		else if (id == "delroom") {
 			var roomlist = JSON.parse(this.roomlistJSON);
 			roomlist.splice(this.selectItemNum, 1);
 			roomlist = JSON.stringify(roomlist, null);
 			this.$app.$def.settingsChange("wgsettings_wgchat_roomlist", roomlist);
-			this.chatroomListReady();
+			this.$app.$def.goReplacePage("/pages/ui/function/wgchat");
 		} else if (id == "clearchatdb") {
 			file.delete({
-				uri: this.roomDB + this.chatroomList[this.selectItemNum]["id"],
+				uri:
+					this.roomDB + this.chatroomList[this.selectItemNum]["id"] + ".json",
 				success: () => this.$app.$def.toTips("", `true`),
 				fail: (code) =>
 					this.$app.$def.toTips("", `handling fail, code = ${code}`),
@@ -179,13 +181,12 @@ export default {
 		}
 	},
 	chatroomListReady() {
-		this.chatroomList = [];
 		storage.get({
 			key: "wgsettings_wgchat_roomlist",
 			success: (data) => {
+				var chatroomListNew = [];
 				this.roomlistJSON = data;
 				const roomlist = JSON.parse(data);
-				console.log("sbsbsb roomlist.length = ", roomlist.length);
 				if (roomlist.length > 0) {
 					let tol = roomlist.length + 1; //1 个缓冲垫底
 					for (let i = 0; i < tol; i++) {
@@ -204,7 +205,7 @@ export default {
 							list_id = id;
 							list_name = name;
 						}
-						this.chatroomList.push({
+						chatroomListNew.push({
 							num: list_num,
 							color: list_color,
 							show: list_show,
@@ -213,6 +214,7 @@ export default {
 						});
 					}
 				}
+				this.chatroomList = chatroomListNew;
 			},
 		});
 	},
@@ -220,7 +222,7 @@ export default {
 		this.chatroommenuList = []; //清空
 		let menulistlen = 6; //默认菜单个数
 		if (this.menuflag == "item") menulistlen = 4; //房间菜单个数
-		let tol = menulistlen + 2; //1 个缓冲垫底
+		let tol = menulistlen + 1; //1 个缓冲垫底
 		for (let i = 0; i < tol; i++) {
 			let inx = i + 1;
 			let list_num = -1;
