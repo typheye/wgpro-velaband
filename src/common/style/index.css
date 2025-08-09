@@ -214,6 +214,9 @@
 	text-align: left;
 	font-size: 30px;
 	color: white;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: clip;
 }
 
 .edittext-div {
