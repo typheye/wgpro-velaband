@@ -11,6 +11,7 @@
 			<text class="exit-tip-text">Loading...</text>
 		</div>
 		<div class="exit" else>
+			<text class="exit-tip-text">{{ $t("edittip.tacceditshuo.text1") }}</text>
 			<div
 				class="edittext2-div"
 				style="border: 4px solid {{ fc_v0 }}"
@@ -62,6 +63,7 @@ export default {
 	},
 	ht(t, i) {
 		if (t == 1) eval("this.fc_" + i + " = 'black'");
+		else if (t == -1) eval("this.fc_" + i + " = '#32618D'");
 		else eval("this.fc_" + i + " = '#3c3c3c'");
 	},
 	onReady() {
@@ -148,7 +150,7 @@ export default {
 		}
 	},
 	toBack() {
-		this.$app.$def.goReplacePage("/pages/ui/acts/settings/taccount");
+		this.$app.$def.goReplacePage("pages/ui/acts/settings/taccount");
 	},
 	toEditText() {
 		storage.gets({
@@ -156,10 +158,10 @@ export default {
 			success: (datas) => {
 				let _keyboardtype = "QWERTY";
 				let _vibratemode = "short";
-				if (datas.wgsettings_keyboardUseT9) _keyboardtype = "T9";
-				if (datas.wgsettings_keyboardUseLongVibrate) _vibratemode = "long";
-				this.$app.$def.goReplacePageWithParams("/pages/ui/popup/input", {
-					reqPage: "/pages/ui/acts/settings/tacceditshuo",
+				if (datas.wgsettings_keyboardUseT9 == true) _keyboardtype = "T9";
+				if (datas.wgsettings_keyboardUseLongVibrate == true) _vibratemode = "long";
+				this.$app.$def.goReplacePageWithParams("pages/ui/popup/input", {
+					reqPage: "pages/ui/acts/settings/tacceditshuo",
 					textValues: JSON.stringify(this.inputValues),
 					textIndex: "msg",
 					keyboardtype: _keyboardtype,

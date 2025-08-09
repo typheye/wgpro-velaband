@@ -318,11 +318,11 @@
 
 .wgpro-item3 {
 	width: 100%;
-	height: 80px;
+	height: 100px;
 	padding: 10px;
 	margin-top: 10px;
 	background-color: #3c3c3c;
-	border-radius: 30px;
+	border-radius: 15px;
 }
 
 .wgpro-item4 {
@@ -437,4 +437,17 @@
 	text-align: center;
 	margin-top: 20px;
 	font-size: 25px;
+}
+
+/* 2025.08.08 ADD */
+.wgpro-listlayout-gap2 {
+	width: 100%;
+	height: 0%;
+}
+
+.wgpro-listlayout4 {
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	align-items: center;
 }

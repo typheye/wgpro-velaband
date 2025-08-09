@@ -11,6 +11,7 @@
 			<text class="exit-tip-text">Loading...</text>
 		</div>
 		<div class="exit" else>
+			<text class="exit-tip-text">{{ $t("edittip.addroom.text1") }}</text>
 			<div
 				class="edittext2-div"
 				style="border: 4px solid {{ fc_v0 }}"
@@ -60,6 +61,7 @@ export default {
 	},
 	ht(t, i) {
 		if (t == 1) eval("this.fc_" + i + " = 'black'");
+		else if (t == -1) eval("this.fc_" + i + " = '#32618D'");
 		else eval("this.fc_" + i + " = '#3c3c3c'");
 	},
 	onReady() {
@@ -81,7 +83,7 @@ export default {
 			this.$app.$def.toTips("", this.$t("menu.chatroomlist.def.item2.err1")),
 				(this.isLoading = false);
 		else {
-			var roomnumlimit = 3;
+			var roomnumlimit = this.$app.$def.getRoomNumLimit();
 			storage.get({
 				key: "wgsettings_wgchat_roomlist",
 				success: (data) => {
@@ -103,10 +105,14 @@ export default {
 							success: (response) => {
 								if (response.code == 200) {
 									const roomInfo = JSON.parse(response.data);
-									roomlist.push({
-										id: this.inputValues["id"],
-										name: roomInfo.room,
-									});
+									if (
+										!roomlist.some((room) => room.id === this.inputValues["id"])
+									) {
+										roomlist.push({
+											id: this.inputValues["id"],
+											name: roomInfo.room,
+										});
+									}
 									roomlist = JSON.stringify(roomlist, null);
 									this.$app.$def.settingsChange(
 										"wgsettings_wgchat_roomlist",
@@ -138,7 +144,7 @@ export default {
 		}
 	},
 	toBack() {
-		this.$app.$def.goReplacePage("/pages/ui/function/wgchat");
+		this.$app.$def.goReplacePage("pages/ui/function/wgchat");
 	},
 	toEditText() {
 		storage.gets({
@@ -146,10 +152,11 @@ export default {
 			success: (datas) => {
 				let _keyboardtype = "QWERTY";
 				let _vibratemode = "short";
-				if (datas.wgsettings_keyboardUseT9) _keyboardtype = "T9";
-				if (datas.wgsettings_keyboardUseLongVibrate) _vibratemode = "long";
-				this.$app.$def.goReplacePageWithParams("/pages/ui/popup/input", {
-					reqPage: "/pages/ui/acts/wgchat/addroom",
+				if (datas.wgsettings_keyboardUseT9 == true) _keyboardtype = "T9";
+				if (datas.wgsettings_keyboardUseLongVibrate == true)
+					_vibratemode = "long";
+				this.$app.$def.goReplacePageWithParams("pages/ui/popup/input", {
+					reqPage: "pages/ui/acts/wgchat/addroom",
 					textValues: JSON.stringify(this.inputValues),
 					textIndex: "id",
 					keyboardtype: _keyboardtype,
