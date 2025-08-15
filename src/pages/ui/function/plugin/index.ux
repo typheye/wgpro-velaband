@@ -152,9 +152,8 @@ export default {
 				},
 			});
 		}
-		//小米手环暂无法使用request
-		/* else if (id == "10001")
-			this.$app.$def.goPage("pages/ui/acts/plugin/project/p10001");*/
+		else if (id == "10001")
+			this.$app.$def.goPage("pages/ui/acts/plugin/project/p10001");
 		else this.$app.$def.toTips("", this.$t("tips.run_fail"));
 	},
 	toRunLong(id, num) {

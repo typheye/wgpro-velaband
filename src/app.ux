@@ -94,12 +94,8 @@ export default {
 	},
 	settingsInit() {
 		this.settingsChange("wgsettings_init", true);
-		file.writeText({
-			uri: "internal://files/mnt/Documents/README",
-			text: "Hello World",
-		});
-		file.delete({
-			uri: "internal://files/mnt/Documents/README",
+		file.listdir({
+			uri: "internal://files",
 		});
 	},
 	settingsReset() {
@@ -215,7 +211,7 @@ export default {
 			},
 		};
 		let flag = "def";
-		//if (this.product == "Xiaomi Smart Band 9 Pro") flag = "proxy";
+		if (this.product == "Xiaomi Smart Band 9 Pro") flag = "proxy";
 		//else if (this.product == "Emulator-Vela") flag = "proxy";
 		return URIs[str][flag];
 	},

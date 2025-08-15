@@ -58,8 +58,7 @@
 						</div>
 					</div>
 				</div>
-				<!--实测小米手环崩溃-->
-				<div class="wgpro-items-group" if="false">
+				<div class="wgpro-items-group">
 					<div
 						class="wgpro-item"
 						style="background-color: {{ itc_p2v1 }}"
