@@ -151,12 +151,12 @@ export default {
 					this.$app.$def.toTips("", this.$t("tips.run_fail"));
 				},
 			});
-		}
-		else if (id == "10001")
+		} else if (id == "10001")
 			this.$app.$def.goPage("pages/ui/acts/plugin/project/p10001");
 		else this.$app.$def.toTips("", this.$t("tips.run_fail"));
 	},
 	toRunLong(id, num) {
+		this.$app.$def.shortVib(true);
 		this.menuflag = "item";
 		this.selectItemNum = num;
 		this.ht(0, num); //fix item color
@@ -204,7 +204,7 @@ export default {
 				this.pluglistJSON = data;
 				const pluglist = JSON.parse(data);
 				if (pluglist.length > 0) {
-					let tol = pluglist.length + 2; //2 个缓冲垫底
+					let tol = pluglist.length + 1; //1 个缓冲垫底
 					for (let i = 0; i < tol; i++) {
 						let inx = i + 1;
 						let list_num = -1;
@@ -238,7 +238,7 @@ export default {
 		this.plugmenuList = []; //清空
 		let menulistlen = 4; //默认菜单个数
 		if (this.menuflag == "item") menulistlen = 2; //扩展菜单个数
-		let tol = menulistlen + 2; //2 个缓冲垫底
+		let tol = menulistlen + 1; //1 个缓冲垫底
 		for (let i = 0; i < tol; i++) {
 			let inx = i + 1;
 			let list_num = -1;

@@ -123,6 +123,7 @@ export default {
 			});
 	},
 	toRunLong(id, num) {
+		this.$app.$def.shortVib(true);
 		this.menuflag = "item";
 		this.selectItemNum = num;
 		this.ht(0, num); //fix item color
@@ -201,7 +202,7 @@ export default {
 				this.roomlistJSON = data;
 				const roomlist = JSON.parse(data);
 				if (roomlist.length > 0) {
-					let tol = roomlist.length + 2; //2 个缓冲垫底
+					let tol = roomlist.length + 1; //1 个缓冲垫底
 					for (let i = 0; i < tol; i++) {
 						let inx = i + 1;
 						let list_num = -1;
@@ -235,7 +236,7 @@ export default {
 		this.chatroommenuList = []; //清空
 		let menulistlen = 6; //默认菜单个数
 		if (this.menuflag == "item") menulistlen = 4; //房间菜单个数
-		let tol = menulistlen + 2; //2 个缓冲垫底
+		let tol = menulistlen + 1; //1 个缓冲垫底
 		for (let i = 0; i < tol; i++) {
 			let inx = i + 1;
 			let list_num = -1;

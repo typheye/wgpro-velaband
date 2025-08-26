@@ -26,12 +26,14 @@
 						onlongpress="showmsginfo($item.num)"
 					>
 						<div class="wgpro-msg-head" style="height:{{ $item.h2 }};">
+							<!--
 							<marquee class="wgpro-msg-head-text-role" if="{{ $item.h3 }}">
 								{{ $item.role }}
 							</marquee>
 							<marquee class="wgpro-msg-head-text-ip" if="{{ $item.h4 }}">
 								{{ $item.ip }}
 							</marquee>
+							-->
 							<marquee class="wgpro-msg-head-text">
 								{{ $item.name }}
 							</marquee>
@@ -103,7 +105,8 @@ export default {
 		const totips = () => {
 			this.$app.$def.toTips("", this.$t("acts.wgchat.pushmsg.tip1"));
 		};
-		if (evt.direction === "left")
+		if (evt.direction === "left") {
+			this.$app.$def.shortVib(true);
 			//login state
 			storage.get({
 				key: "wgsettings_taccount_cookie",
@@ -115,6 +118,7 @@ export default {
 					totips();
 				},
 			});
+		} else if (evt.direction === "right") this.toBack();
 	},
 	userReady() {
 		storage.get({
@@ -185,7 +189,7 @@ export default {
 		const roomInfo = JSON.parse(data);
 		const msgLists = roomInfo.data;
 		if (msgLists.length > 0) {
-			let tol = msgLists.length + 2; //2个缓冲
+			let tol = msgLists.length + 1; //2个缓冲
 			for (let i = 0; i < tol; i++) {
 				let inx = i + 1;
 				let list_num = -1;
@@ -222,7 +226,7 @@ export default {
 					const calculateTextHeight = (
 						minHeight,
 						text,
-						charsPerLine = "8",
+						charsPerLine = "10",
 						lineHeight = "40",
 						lineSpacing = "5"
 					) => {
@@ -332,7 +336,8 @@ export default {
 		});
 	},
 	showmsginfo(num) {
-		if (num != -1)
+		if (num != -1) {
+			this.$app.$def.shortVib(true);
 			this.$app.$def.toTips(
 				this.$t("menu.chatroomlist.msginfotext"),
 				this.$app.$def.textFormat(this.$t("menu.chatroomlist.msginfodemo"), {
@@ -343,6 +348,7 @@ export default {
 					data: this.roommsgList[num]["data"],
 				})
 			);
+		}
 	},
 };
 </script>
