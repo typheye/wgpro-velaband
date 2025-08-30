@@ -116,7 +116,7 @@ export default {
 	height: auto;
 	color: white;
 	text-align: center;
-	font-size: 50px;
+	font-size: 35px;
 	font-weight: bold;
 }
 .t2 {
@@ -124,7 +124,7 @@ export default {
 	height: auto;
 	color: white;
 	text-align: center;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
 }
 .p2 {
