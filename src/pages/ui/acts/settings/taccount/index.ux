@@ -35,9 +35,6 @@
 						ontouchend="ht(0, 'p1v1')"
 						onclick="toRun('tipuserinfo')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a70.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.taccount.p1.item1.text") }}
@@ -55,7 +52,6 @@
 						onclick="toRun('')"
 						if="{{ isLogin }}"
 					>
-						<div class="wgpro-item-left"></div>
 						<div class="wgpro-item-texts">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.taccount.p1.item2.text") }}
@@ -81,9 +77,6 @@
 						ontouchend="ht(0, 'p2v1')"
 						onclick="toRun('toeditnick')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a44.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.taccount.p2.item1.text") }}
@@ -100,7 +93,6 @@
 						ontouchend="ht(0, 'p2v2')"
 						onclick="toRun('toeditshuo')"
 					>
-						<div class="wgpro-item-left"></div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.taccount.p2.item2.text") }}
@@ -119,9 +111,6 @@
 						ontouchend="ht(0, 'p3v1')"
 						onclick="toRun('tologout')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a29.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.taccount.p3.item1.text") }}
@@ -138,9 +127,6 @@
 						ontouchend="ht(0, 'p3v2')"
 						onclick="toRun('todeluser')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a85.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.taccount.p3.item2.text") }}

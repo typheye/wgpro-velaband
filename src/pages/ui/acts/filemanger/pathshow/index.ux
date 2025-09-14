@@ -25,12 +25,12 @@
 					ontouchend="htm(0, $item.num)"
 					onclick="toRunMenu($item.id)"
 				>
-					<marquee
+					<text
 						class="wgpro-item-texts-text2"
 						style="color: {{ $item.textcolor }};"
 					>
 						{{ $item.name }}
-					</marquee>
+					</text>
 				</list-item>
 			</list>
 		</div>
@@ -54,19 +54,13 @@
 					onclick="toRun($item.id, $item.uri, $item.isfile, $item.name, $item.num)"
 					onlongpress="toRunLong($item.id, $item.num, $item.isfile)"
 				>
-					<div class="wgpro-item-left" show="{{ $item.show }}">
-						<img
-							class="wgpro-item-left-icon"
-							src="/common/mipmap/{{ $item.ico }}.png"
-						/>
-					</div>
 					<div class="wgpro-item-texts-none">
-						<marquee class="wgpro-item-texts-text">
+						<text class="wgpro-item-texts-text">
 							{{ $item.name }}
-						</marquee>
-						<marquee class="wgpro-item-texts-subtext">
+						</text>
+						<text class="wgpro-item-texts-subtext">
 							{{ $item.info }}
-						</marquee>
+						</text>
 					</div>
 				</list-item>
 			</list>
@@ -432,23 +426,6 @@ export default {
 					}
 				);
 			} else this.$app.$def.toTips("", this.$t("tips.toNull"));
-			/*else if (id == "fo_music_wgmusicplayer") {
-				this.$app.$def.goPageWithParams(
-					"pages/ui/acts/filemanger/open/musicplayer/player",
-					{
-						musicinfo: JSON.stringify([
-							{
-								id: 1,
-								name: this.getFileNameWithoutExtension(
-									this.pathshowList[this.selectItemNum]["uri"]
-								),
-								artists: "None",
-								playUrl: this.pathshowList[this.selectItemNum]["uri"],
-							},
-						]),
-					}
-				);
-			}*/
 		} else if (id == "back");
 		else if (id == "back_fileopen") {
 			needoffmenu = false;

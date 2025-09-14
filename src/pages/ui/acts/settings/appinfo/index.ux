@@ -32,9 +32,6 @@
 						ontouchend="ht(0, 'p1v1')"
 						onclick="toRun('appabout')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a21.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.appinfo.p1.item1.text") }}
@@ -51,9 +48,6 @@
 						ontouchend="ht(0, 'p1v2')"
 						onclick="toRun('appactive')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a71.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.appinfo.p1.item2.text") }}
@@ -70,9 +64,6 @@
 						ontouchend="ht(0, 'p1v3')"
 						onclick="toRun('appupdate')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a36.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.appinfo.p1.item3.text") }}
@@ -91,9 +82,6 @@
 						ontouchend="ht(0, 'p2v1')"
 						onclick="toRun('appbackup')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a74.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.appinfo.p2.item1.text") }}
@@ -110,9 +98,6 @@
 						ontouchend="ht(0, 'p2v2')"
 						onclick="toRun('appreset')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a75.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.appinfo.p2.item2.text") }}
@@ -131,9 +116,6 @@
 						ontouchend="ht(0, 'p3v1')"
 						onclick="toRun('joinqqun')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a76.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.appinfo.p3.item1.text") }}

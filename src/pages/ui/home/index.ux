@@ -39,17 +39,6 @@
 					</div>
 					<div
 						class="fun-item"
-						style="background-color: {{ fc_v4 }}"
-						ontouchstart="ht(1, 'v4')"
-						ontouchend="ht(0, 'v4')"
-						onclick="toRun('browser')"
-					>
-						<image class="fun-img" src="/common/mipmap/a40.png" />
-					</div>
-				</div>
-				<div class="fun-list3">
-					<div
-						class="fun-item"
 						style="background-color: {{ fc_v5 }}"
 						ontouchstart="ht(1, 'v5')"
 						ontouchend="ht(0, 'v5')"
@@ -57,6 +46,8 @@
 					>
 						<image class="fun-img" src="/common/mipmap/a48.png" />
 					</div>
+				</div>
+				<div class="fun-list3">
 					<div
 						class="fun-item"
 						style="background-color: {{ fc_v6 }}"
@@ -66,8 +57,6 @@
 					>
 						<image class="fun-img" src="/common/mipmap/a43.png" />
 					</div>
-				</div>
-				<div class="fun-list3">
 					<div
 						class="fun-item"
 						style="background-color: {{ fc_v7 }}"
@@ -77,6 +66,8 @@
 					>
 						<image class="fun-img" src="/common/mipmap/a10.png" />
 					</div>
+				</div>
+				<div class="fun-list3">
 					<div
 						class="fun-item"
 						style="background-color: {{ fc_v9 }}"
@@ -86,6 +77,7 @@
 					>
 						<image class="fun-img" src="/common/mipmap/a23.png" />
 					</div>
+					<div class="fun-item-th"></div>
 				</div>
 				<div class="wgpro-gap-bottom" />
 			</div>
@@ -127,39 +119,6 @@ export default {
 	toRun(id) {
 		if (id == "backlaunch")
 			this.$app.$def.toTips("", this.$t("tips.backLaunch"));
-		else if (id == "browser")
-			storage.gets({
-				keys: [
-					"wgsettings_browser_defUri",
-					"wgsettings_taccount_cookie",
-					"wgsettings_taccount_username",
-				],
-				success: (datas) => {
-					if (
-						datas.wgsettings_taccount_username &&
-						datas.wgsettings_taccount_cookie
-					)
-						this.$app.$def.goPageWithParams("pages/ui/function/browser", {
-							enableWeb: true,
-							textValues: JSON.stringify({
-								uri: datas.wgsettings_browser_defUri,
-							}),
-							usrid: datas.wgsettings_taccount_username,
-							usrcookie: datas.wgsettings_taccount_cookie,
-						});
-					else
-						this.$app.$def.toTips(
-							this.$t("display.browser.tabtext"),
-							this.$t("display.settings.run.browser.needlogin")
-						);
-				},
-				fail: () => {
-					this.$app.$def.toTips(
-						this.$t("display.browser.tabtext"),
-						this.$t("tips.toNull")
-					);
-				},
-			});
 		else {
 			var v_uri = "";
 			if (id == "systool") v_uri = "pages/ui/function/systool";

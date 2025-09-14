@@ -25,12 +25,12 @@
 					ontouchend="htm(0, $item.num)"
 					onclick="toRunMenu($item.id)"
 				>
-					<marquee
+					<text
 						class="wgpro-item-texts-text2"
 						style="color: {{ $item.textcolor }};"
 					>
 						{{ $item.name }}
-					</marquee>
+					</text>
 				</list-item>
 			</list>
 		</div>
@@ -56,15 +56,10 @@
 					onclick="toRun($item.id)"
 					onlongpress="toRunLong($item.id, $item.num)"
 				>
-					<div class="wgpro-item-left" show="{{ $item.show }}">
-						<div class="wgpro-item-left-ico-back">
-							<img class="wgpro-item-left-ico" src="/common/mipmap/a48.png" />
-						</div>
-					</div>
 					<div class="wgpro-item-texts-none2">
-						<marquee class="wgpro-item-texts-text">
+						<text class="wgpro-item-texts-text">
 							{{ $item.name }}
-						</marquee>
+						</text>
 					</div>
 				</list-item>
 			</list>

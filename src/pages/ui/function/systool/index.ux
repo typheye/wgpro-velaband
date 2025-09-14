@@ -27,9 +27,6 @@
 					ontouchend="ht(0, 'p1v1')"
 					onclick="toRun('sysinfo')"
 				>
-					<div class="wgpro-item2-left">
-						<img class="wgpro-item-left-icon" src="/common/mipmap/a10.png" />
-					</div>
 					<div class="wgpro-item2-texts">
 						<marquee class="wgpro-item2-texts-text">
 							{{ $t("display.systool.p1.item1.text") }}
@@ -47,9 +44,6 @@
 					ontouchend="ht(0, 'p1v2')"
 					onclick="toRun('storagesize')"
 				>
-					<div class="wgpro-item2-left">
-						<img class="wgpro-item-left-icon" src="/common/mipmap/a18.png" />
-					</div>
 					<div class="wgpro-item2-texts">
 						<marquee class="wgpro-item2-texts-text">
 							{{ $t("display.systool.p1.item2.text") }}
@@ -67,9 +61,6 @@
 					ontouchend="ht(0, 'p1v3')"
 					onclick="toRun('displaytest')"
 				>
-					<div class="wgpro-item2-left">
-						<img class="wgpro-item-left-icon" src="/common/mipmap/a46.png" />
-					</div>
 					<div class="wgpro-item2-texts">
 						<marquee class="wgpro-item2-texts-text">
 							{{ $t("display.systool.p1.item3.text") }}

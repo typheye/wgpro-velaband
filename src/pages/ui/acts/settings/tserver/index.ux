@@ -17,9 +17,6 @@
 						ontouchend="ht(0, 'p1v1')"
 						onclick="toRun('wgnotice')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a82.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.tserver.p1.item1.text") }}
@@ -36,9 +33,6 @@
 						ontouchend="ht(0, 'p1v2')"
 						onclick="toRun('wgchat')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a37.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.tserver.p1.item2.text") }}

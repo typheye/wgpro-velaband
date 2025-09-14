@@ -26,16 +26,13 @@
 				onclick="toRun($item.name, $item.path)"
 				onlongpress="toRunLong($item.name, $item.path)"
 			>
-				<div class="wgpro-item-left" show="{{ $item.show }}">
-					<img class="wgpro-item-left-icon" src="/common/mipmap/b5.png" />
-				</div>
 				<div class="wgpro-item-texts-none">
-					<marquee class="wgpro-item-texts-text">
+					<text class="wgpro-item-texts-text">
 						{{ $item.name }}
-					</marquee>
-					<marquee class="wgpro-item-texts-subtext">
+					</text>
+					<text class="wgpro-item-texts-subtext">
 						{{ $item.text }}
-					</marquee>
+					</text>
 				</div>
 			</list-item>
 		</list>

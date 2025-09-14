@@ -17,9 +17,6 @@
 						ontouchend="ht(0, 'p1v1')"
 						onclick="toRun('requpdateinfo')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a31.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.appupdate.p1.item1.text") }}
@@ -36,7 +33,6 @@
 						ontouchend="ht(0, 'p1v2')"
 						onclick="toRun('')"
 					>
-						<div class="wgpro-item-left"></div>
 						<div class="wgpro-item-texts">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.appupdate.p1.item2.text") }}
@@ -62,9 +58,6 @@
 						ontouchend="ht(0, 'p2v1')"
 						onclick="toRun('maginfo')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a53.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.appupdate.p2.item1.text") }}
@@ -78,7 +71,7 @@
 						</div>
 					</div>
 					<div if="{{ hideInfo }}"></div>
-					<div style="flex-direction: column" else>
+					<div style="width: 100%; flex-direction: column" else>
 						<div
 							class="wgpro-item"
 							style="background-color: {{ itc_p2v1s1 }}"
@@ -86,7 +79,6 @@
 							ontouchend="ht(0, 'p2v1s1')"
 							onclick="toRun('')"
 						>
-							<div class="wgpro-item-left"></div>
 							<div class="wgpro-item-texts-none">
 								<marquee class="wgpro-item-texts-text">
 									{{ $t("acts.settings.appupdate.p2.item1.sub.item1.text") }}
@@ -103,7 +95,6 @@
 							ontouchend="ht(0, 'p2v1s2')"
 							onclick="toRun('')"
 						>
-							<div class="wgpro-item-left"></div>
 							<div class="wgpro-item-texts-none">
 								<marquee class="wgpro-item-texts-text">
 									{{ $t("acts.settings.appupdate.p2.item1.sub.item2.text") }}
@@ -120,7 +111,6 @@
 							ontouchend="ht(0, 'p2v1s3')"
 							onclick="toRun('')"
 						>
-							<div class="wgpro-item-left"></div>
 							<div class="wgpro-item-texts-none">
 								<marquee class="wgpro-item-texts-text">
 									{{ $t("acts.settings.appupdate.p2.item1.sub.item3.text") }}
@@ -137,7 +127,6 @@
 							ontouchend="ht(0, 'p2v1s4')"
 							onclick="toRun('catupdateinfo')"
 						>
-							<div class="wgpro-item-left"></div>
 							<div class="wgpro-item-texts-none">
 								<marquee class="wgpro-item-texts-text">
 									{{ $t("acts.settings.appupdate.p2.item1.sub.item4.text") }}
@@ -148,7 +137,7 @@
 							</div>
 						</div>
 						<div if="{{ hideUpgrade }}"></div>
-						<div style="flex-direction: column" else>
+						<div style="width: 100%; flex-direction: column" else>
 							<div
 								class="wgpro-item"
 								style="background-color: {{ itc_p2v1s5 }}"
@@ -156,12 +145,6 @@
 								ontouchend="ht(0, 'p2v1s5')"
 								onclick="toRun('showupdateurl')"
 							>
-								<div class="wgpro-item-left">
-									<img
-										class="wgpro-item-left-icon"
-										src="/common/mipmap/a62.png"
-									/>
-								</div>
 								<div class="wgpro-item-texts-none">
 									<marquee class="wgpro-item-texts-text">
 										{{ $t("acts.settings.appupdate.p2.item1.sub.item5.text") }}
@@ -236,12 +219,13 @@ export default {
 	toRun(id) {
 		if (id == "requpdateinfo") this.reqUpdateInfo();
 		else if (id == "maginfo") this.hideInfo = !this.hideInfo;
-		else if (id == "catupdateinfo")
-			this.$app.$def.toTips(
-				this.$t("acts.settings.appupdate.p2.item1.sub.item4.text"),
-				this.p2i1si4subtextinfo
-			);
-		else if (id == "showupdateurl")
+		else if (id == "catupdateinfo") {
+			if (this.p2i1si4subtextinfo)
+				this.$app.$def.toTips(
+					this.$t("acts.settings.appupdate.p2.item1.sub.item4.text"),
+					this.p2i1si4subtextinfo
+				);
+		} else if (id == "showupdateurl")
 			this.$app.$def.toTipsWithQR(
 				this.$t("acts.settings.appupdate.p2.item1.sub.item5.text"),
 				this.$t("acts.settings.appupdate.p2.item1.sub.item5.subtext"),

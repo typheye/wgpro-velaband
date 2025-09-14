@@ -15,9 +15,6 @@
 						ontouchend="ht(0, 'p1v1')"
 						onclick="toRun('debug1-1')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a10.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">STORAGE</marquee>
 							<marquee class="wgpro-item-texts-subtext">
@@ -32,9 +29,6 @@
 						ontouchend="ht(0, 'p1v2')"
 						onclick="toRun('debug1-2')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a66.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">FILE</marquee>
 							<marquee class="wgpro-item-texts-subtext">API: File Test</marquee>
@@ -47,32 +41,10 @@
 						ontouchend="ht(0, 'p1v3')"
 						onclick="toRun('debug1-3')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a32.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">FETCH</marquee>
 							<marquee class="wgpro-item-texts-subtext">
 								API: Fetch Test
-							</marquee>
-						</div>
-					</div>
-				</div>
-				<div class="wgpro-items-group" if="false">
-					<div
-						class="wgpro-item"
-						style="background-color: {{ itc_p2v1 }}"
-						ontouchstart="ht(1, 'p2v1')"
-						ontouchend="ht(0, 'p2v1')"
-						onclick="switchange('wgsettings_enableX1WebView','status_X1Web')"
-					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a40.png" />
-						</div>
-						<div class="wgpro-item-texts-none">
-							<marquee class="wgpro-item-texts-text">X1 WEB</marquee>
-							<marquee class="wgpro-item-texts-subtext">
-								STA: {{ status_X1Web }}
 							</marquee>
 						</div>
 					</div>
@@ -93,15 +65,12 @@
 </template>
 
 <script>
-import storage from "../../../../utils/storage.js";
 export default {
 	private: {
 		itc_p0v0: "#3c3c3c",
 		itc_p1v1: "rgba(0,0,0,0)",
 		itc_p1v2: "rgba(0,0,0,0)",
 		itc_p1v3: "rgba(0,0,0,0)",
-		itc_p2v1: "rgba(0,0,0,0)",
-		status_X1Web: "DISABLE",
 	},
 	ht(t, i) {
 		if (t == 1) eval("this.itc_" + i + " = 'black'");
@@ -111,9 +80,6 @@ export default {
 	onBackPress() {
 		this.$app.$def.toCancel(true);
 		return true;
-	},
-	onReady() {
-		this.switload();
 	},
 	toBack() {
 		this.$app.$def.goBack();
@@ -127,23 +93,6 @@ export default {
 			else if (id == "debug1-3") v_uri = "pages/ui/acts/debugs/debug3";
 			this.$app.$def.goPage(v_uri);
 		}
-	},
-	switload() {
-		storage.get({
-			key: "wgsettings_enableX1WebView",
-			success: (data) => {
-				if (data == true) this.status_X1Web = "ENABLE";
-			},
-		});
-	},
-	switchange(key, id) {
-		let sh = "DISABLE";
-		let show = eval("this." + id);
-		let state = false;
-		if (show == "DISABLE") state = true;
-		this.$app.$def.settingsChange(key, state);
-		if (state) sh = "ENABLE";
-		eval("this." + id + " = '" + sh + "'");
 	},
 };
 </script>

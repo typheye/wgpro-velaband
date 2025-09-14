@@ -278,13 +278,13 @@ export default {
 }
 
 .title {
-	font-size: 32px;
+	font-size: 25px;
 	color: white;
 	font-weight: bold;
 }
 
 .title2 {
-	font-size: 32px;
+	font-size: 25px;
 	color: red;
 	font-weight: bold;
 	margin-bottom: 10px;
@@ -292,7 +292,7 @@ export default {
 }
 
 .subtitle {
-	font-size: 24px;
+	font-size: 20px;
 	color: #666;
 	margin-top: 10px;
 }
@@ -308,7 +308,7 @@ export default {
 }
 
 .status-bar-text {
-	font-size: 24px;
+	font-size: 20px;
 	color: #444;
 	margin: 5px 0;
 }
@@ -326,7 +326,7 @@ export default {
 	height: 80px;
 	background-color: #4a90e2;
 	color: white;
-	font-size: 24px;
+	font-size: 20px;
 	border-radius: 8px;
 	margin-bottom: 10px;
 }
@@ -336,7 +336,7 @@ export default {
 	height: 80px;
 	background-color: red;
 	color: white;
-	font-size: 24px;
+	font-size: 20px;
 	border-radius: 8px;
 	margin-top: 10px;
 }
@@ -355,7 +355,7 @@ export default {
 	border-radius: 8px;
 	padding: 0 15px;
 	margin-bottom: 15px;
-	font-size: 24px;
+	font-size: 20px;
 	color: white;
 }
 
@@ -375,20 +375,20 @@ export default {
 .result-title,
 .storage-title,
 .log-title {
-	font-size: 28px;
+	font-size: 25px;
 	color: #333;
 	font-weight: bold;
 	margin-bottom: 10px;
 }
 
 .result-text {
-	font-size: 24px;
+	font-size: 20px;
 	color: #e74c3c;
 }
 
 .storage-content {
 	height: 100px;
-	font-size: 22px;
+	font-size: 20px;
 	color: #444;
 	font-family: monospace;
 }
@@ -400,7 +400,7 @@ export default {
 }
 
 .log-content-text {
-	font-size: 22px;
+	font-size: 20px;
 	color: #666;
 	line-height: 36px;
 }

@@ -111,10 +111,6 @@
         "launchMode": "singleTask",
         "component": "index"
       },
-      "pages/ui/function/browser": {
-        "launchMode": "singleTask",
-        "component": "index"
-      },
       "pages/ui/function/plugin": {
         "launchMode": "singleTask",
         "component": "index"
@@ -164,10 +160,6 @@
         "component": "index"
       },
       "pages/ui/acts/settings/filemanger": {
-        "launchMode": "singleTask",
-        "component": "index"
-      },
-      "pages/ui/acts/settings/browser": {
         "launchMode": "singleTask",
         "component": "index"
       },
@@ -235,18 +227,6 @@
         "launchMode": "singleTask",
         "component": "index"
       },
-      "pages/ui/acts/filemanger/open/musicplayer/player": {
-        "launchMode": "singleTask",
-        "component": "index"
-      },
-      "pages/ui/acts/filemanger/open/musicplayer/volume": {
-        "launchMode": "singleTask",
-        "component": "index"
-      },
-      "pages/ui/acts/filemanger/open/musicplayer/list": {
-        "launchMode": "singleTask",
-        "component": "index"
-      },
       "pages/ui/acts/filemanger/open/textshow": {
         "launchMode": "singleTask",
         "component": "index"
@@ -260,14 +240,6 @@
         "component": "index"
       },
       "pages/ui/acts/debugs/debug3": {
-        "launchMode": "singleTask",
-        "component": "index"
-      },
-      "pages/ui/acts/browser/x1web": {
-        "launchMode": "singleTask",
-        "component": "index"
-      },
-      "pages/ui/acts/browser/setdefuri": {
         "launchMode": "singleTask",
         "component": "index"
       }

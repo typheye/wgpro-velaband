@@ -17,9 +17,6 @@
 						ontouchend="ht(0, 'p1v1')"
 						onclick="toRun('editnick')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a44.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.wgchat.settings.p1.item1.text") }}

@@ -17,9 +17,6 @@
 						ontouchend="ht(0, 'p1v1')"
 						onclick="toRun('taccount')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a70.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("display.settings.p1.item1.text") }}
@@ -36,9 +33,6 @@
 						ontouchend="ht(0, 'p1v2')"
 						onclick="toRun('tserver')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a32.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("display.settings.p1.item2.text") }}
@@ -57,9 +51,6 @@
 						ontouchend="ht(0, 'p2v1')"
 						onclick="toRun('textdisplay')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a69.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("display.settings.p2.item1.text") }}
@@ -76,34 +67,12 @@
 						ontouchend="ht(0, 'p2v2')"
 						onclick="toRun('filemanger')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a66.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("display.settings.p2.item2.text") }}
 							</marquee>
 							<marquee class="wgpro-item-texts-subtext">
 								{{ $t("display.settings.p2.item2.subtext") }}
-							</marquee>
-						</div>
-					</div>
-					<div
-						class="wgpro-item"
-						style="background-color: {{ itc_p2v3 }}"
-						ontouchstart="ht(1, 'p2v3')"
-						ontouchend="ht(0, 'p2v3')"
-						onclick="toRun('browser')"
-					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a40.png" />
-						</div>
-						<div class="wgpro-item-texts-none">
-							<marquee class="wgpro-item-texts-text">
-								{{ $t("display.settings.p2.item3.text") }}
-							</marquee>
-							<marquee class="wgpro-item-texts-subtext">
-								{{ $t("display.settings.p2.item3.subtext") }}
 							</marquee>
 						</div>
 					</div>
@@ -116,9 +85,6 @@
 						ontouchend="ht(0, 'p3v1')"
 						onclick="toRun('appinfo')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a65.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("display.settings.p3.item1.text") }}
@@ -135,9 +101,6 @@
 						ontouchend="ht(0, 'p3v2')"
 						onclick="toRun('polinfo')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a45.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("display.settings.p3.item2.text") }}
@@ -171,10 +134,8 @@ export default {
 		itc_p1v2: "rgba(0,0,0,0)",
 		itc_p2v1: "rgba(0,0,0,0)",
 		itc_p2v2: "rgba(0,0,0,0)",
-		itc_p2v3: "rgba(0,0,0,0)",
 		itc_p3v1: "rgba(0,0,0,0)",
 		itc_p3v2: "rgba(0,0,0,0)",
-		itc_p3v3: "rgba(0,0,0,0)",
 	},
 	ht(t, i) {
 		if (t == 1) eval("this.itc_" + i + " = 'black'");

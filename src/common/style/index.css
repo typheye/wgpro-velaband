@@ -39,31 +39,31 @@
 }
 
 .tab-back {
-	width: 15%;
+	width: 20%;
 	height: auto;
-	padding-left: 0px;
+	padding-right: 5px;
 	color: white;
 	text-align: right;
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: bold;
 }
 
 .tab-text {
-	width: 70%;
+	width: 60%;
 	height: auto;
 	color: white;
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: bold;
 }
 
 .tab-more {
-	width: 15%;
+	width: 20%;
 	height: auto;
-	padding-right: 0px;
+	padding-left: 5px;
 	color: white;
 	text-align: left;
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: bold;
 }
 
@@ -131,7 +131,7 @@
 	color: #7b7b7b;
 	text-align: center;
 	margin-top: 20px;
-	font-size: 30px;
+	font-size: 25px;
 }
 
 .exit-tip-text-a {
@@ -140,7 +140,7 @@
 	color: #32618D;
 	text-align: center;
 	margin-top: 20px;
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: bold;
 }
 
@@ -212,7 +212,7 @@
 	width: 90%;
 	height: 80%;
 	text-align: left;
-	font-size: 30px;
+	font-size: 25px;
 	color: white;
 	white-space: nowrap;
 	overflow: hidden;

@@ -17,9 +17,6 @@
 						ontouchend="ht(0, 'p1v1')"
 						onclick="toRun('')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a93.png" />
-						</div>
 						<div class="wgpro-item-texts">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.textdisplay.p1.item1.text") }}
@@ -43,9 +40,6 @@
 						ontouchend="ht(0, 'p1v2')"
 						onclick="toRun('')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a92.png" />
-						</div>
 						<div class="wgpro-item-texts">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.textdisplay.p1.item2.text") }}
@@ -70,7 +64,6 @@
 						onclick="toRun('')"
 						if="{{ !swit_it4_state }}"
 					>
-						<div class="wgpro-item-left"></div>
 						<div class="wgpro-item-texts">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.textdisplay.p1.item3.text") }}
@@ -97,9 +90,6 @@
 						ontouchend="ht(0, 'p2v1')"
 						onclick="toRun('setfontsize')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a89.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.textdisplay.p2.item1.text") }}
@@ -116,9 +106,6 @@
 						ontouchend="ht(0, 'p2v2')"
 						onclick="toRun('setfontcolor')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a88.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.textdisplay.p2.item2.text") }}
@@ -135,9 +122,6 @@
 						ontouchend="ht(0, 'p2v3')"
 						onclick="toRun('setbackgroundcolor')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a87.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.textdisplay.p2.item3.text") }}
@@ -156,9 +140,6 @@
 						ontouchend="ht(0, 'p3v1')"
 						onclick="toRun('')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a86.png" />
-						</div>
 						<div class="wgpro-item-texts">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.textdisplay.p3.item1.text") }}
@@ -182,7 +163,6 @@
 						ontouchend="ht(0, 'p3v2')"
 						onclick="toRun('')"
 					>
-						<div class="wgpro-item-left"></div>
 						<div class="wgpro-item-texts">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.textdisplay.p3.item2.text") }}

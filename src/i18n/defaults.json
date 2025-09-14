@@ -243,7 +243,7 @@
             "fileopen": {
                 "fow_text": {
                     "item1": {
-                        "name": "腕管Pro：文本浏览",
+                        "name": "文本浏览",
                         "id": "fo_text_wgdisplay"
                     },
                     "item2": {
@@ -253,7 +253,7 @@
                 },
                 "fow_photo": {
                     "item1": {
-                        "name": "腕管Pro：图片浏览",
+                        "name": "图片浏览",
                         "id": "fo_photo_wgdisplay"
                     },
                     "item2": {

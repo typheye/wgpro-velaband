@@ -17,9 +17,6 @@
 						ontouchend="ht(0, 'p1v1')"
 						onclick="toRun('')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a64.png" />
-						</div>
 						<div class="wgpro-item-texts">
 							<marquee class="wgpro-item-texts-text">
 								{{ $t("acts.settings.filemanger.p1.item1.text") }}

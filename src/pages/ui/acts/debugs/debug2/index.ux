@@ -16,14 +16,11 @@
 						ontouchend="ht(0, 'p1v1')"
 						onclick="toRun('Files', 'internal://files')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a66.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
-							<marquee class="wgpro-item-texts-text">Files</marquee>
-							<marquee class="wgpro-item-texts-subtext">
+							<text class="wgpro-item-texts-text">Files</text>
+							<text class="wgpro-item-texts-subtext">
 								internal://files
-							</marquee>
+							</text>
 						</div>
 					</div>
 				</div>
@@ -35,14 +32,11 @@
 						ontouchend="ht(0, 'p2v1')"
 						onclick="toRun('Cache', 'internal://cache')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a66.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
-							<marquee class="wgpro-item-texts-text">Cache</marquee>
-							<marquee class="wgpro-item-texts-subtext">
+							<text class="wgpro-item-texts-text">Cache</text>
+							<text class="wgpro-item-texts-subtext">
 								internal://cache
-							</marquee>
+							</text>
 						</div>
 					</div>
 					<div
@@ -52,14 +46,11 @@
 						ontouchend="ht(0, 'p2v2')"
 						onclick="toRun('Mass', 'internal://mass')"
 					>
-						<div class="wgpro-item-left">
-							<img class="wgpro-item-left-icon" src="/common/mipmap/a66.png" />
-						</div>
 						<div class="wgpro-item-texts-none">
-							<marquee class="wgpro-item-texts-text">Mass</marquee>
-							<marquee class="wgpro-item-texts-subtext">
+							<text class="wgpro-item-texts-text">Mass</text>
+							<text class="wgpro-item-texts-subtext">
 								internal://mass
-							</marquee>
+							</text>
 						</div>
 					</div>
 				</div>
