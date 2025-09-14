@@ -1,6 +1,6 @@
 {
   "name": "wgpro",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "",
   "engines": {
     "node": ">=8.10"
@@ -8,7 +8,7 @@
   "scripts": {
     "start": "aiot server --watch --open-nuttx",
     "build": "aiot build",
-    "release": "aiot release",
+    "release": "aiot release --enable-jsc --enable-protobuf",
     "watch": "aiot watch --open-nuttx",
     "lint": "eslint --format codeframe --fix --ext .ux,.js src/"
   },
@@ -23,6 +23,7 @@
     "chrome 65"
   ],
   "dependencies": {
+    "@aiot-toolkit/jsc": "^1.0.8",
     "less": "^4.4.0",
     "less-loader": "^12.3.0"
   }
