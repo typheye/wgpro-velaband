@@ -183,6 +183,7 @@ export default {
 	onReady() {
 		this.switload();
 		this.$app.$def.taccLoginCheck();
+		this.$app.$def.taccGetUserData();
 	},
 	toBack() {
 		this.$app.$def.goBack();
@@ -218,7 +219,8 @@ export default {
 		} else if (id == "tologin") {
 			if (!this.isLogin)
 				this.$app.$def.goReplacePageWithParams(
-					"pages/ui/acts/settings/tacclogin",
+					//"pages/ui/acts/settings/tacclogin",
+					"pages/ui/acts/settings/taccqrlogin",
 					{
 						textValues: JSON.stringify({
 							username: this.taccusr,
@@ -260,7 +262,8 @@ export default {
 					this.taccusr = datas.wgsettings_taccount_username;
 				if (datas.wgsettings_taccount_password)
 					this.taccpwd = datas.wgsettings_taccount_password;
-				if (datas.wgsettings_taccount_allowShare == true) this.swit_it1_state = true;
+				if (datas.wgsettings_taccount_allowShare == true)
+					this.swit_it1_state = true;
 				if (!datas.wgsettings_taccount_cookie) this.loginReady(false);
 				else this.loginReady(true);
 			},

@@ -70,6 +70,15 @@
 				<div class="fun-list3">
 					<div
 						class="fun-item"
+						style="background-color: {{ fc_v8 }}"
+						ontouchstart="ht(1, 'v8')"
+						ontouchend="ht(0, 'v8')"
+						onclick="toRun('backlaunch')"
+					>
+						<image class="fun-img" src="/common/mipmap/a46.png" />
+					</div>
+					<div
+						class="fun-item"
 						style="background-color: {{ fc_v9 }}"
 						ontouchstart="ht(1, 'v9')"
 						ontouchend="ht(0, 'v9')"
@@ -77,7 +86,6 @@
 					>
 						<image class="fun-img" src="/common/mipmap/a23.png" />
 					</div>
-					<div class="fun-item-th"></div>
 				</div>
 				<div class="wgpro-gap-bottom" />
 			</div>
@@ -115,6 +123,10 @@ export default {
 	onInit() {
 		this.str1 = this.$t("tips.backLaunch");
 		this.updateCheck();
+	},
+	onShow() {
+		this.testTaccLoginCheck();
+		this.testTaccGetUserData();
 	},
 	toRun(id) {
 		if (id == "backlaunch")
@@ -166,6 +178,82 @@ export default {
 				}
 			},
 		});
+	},
+	testTaccGetUserData() {
+		if (!fetch.isEnableFetch())
+			storage.gets({
+				keys: ["wgsettings_taccount_username", "wgsettings_taccount_cookie"],
+				success: (datas) => {
+					if (
+						datas.wgsettings_taccount_cookie &&
+						datas.wgsettings_taccount_username
+					) {
+						fetch.fetch({
+							url: this.$app.$def.getTS("taccServerURL") + "api.php",
+							data_GET: {
+								type: "get_user_data",
+								uid: datas.wgsettings_taccount_username,
+								cookie: datas.wgsettings_taccount_cookie,
+							},
+							method: "GET",
+							responseType: "text",
+							success: (response) => {
+								if (response.code == 200) {
+									const reqback = JSON.parse(response.data);
+									if (reqback["code"] == 200) {
+										this.$app.$def.settingsChangeMore(
+											[
+												"wgsettings_taccount_nick",
+												"wgsettings_taccount_userinfo",
+											],
+											[reqback["info"]["nick"], reqback["info"]["shuo"]]
+										);
+									}
+								}
+							},
+						});
+					}
+				},
+			});
+	},
+	testTaccLoginCheck() {
+		if (!fetch.isEnableFetch())
+			storage.gets({
+				keys: ["wgsettings_taccount_username", "wgsettings_taccount_cookie"],
+				success: (datas) => {
+					if (
+						datas.wgsettings_taccount_cookie &&
+						datas.wgsettings_taccount_username
+					) {
+						const timestamp0 = Date.now();
+						fetch.fetch({
+							url: this.$app.$def.getTS("taccServerURL") + "api.php",
+							data_GET: {
+								type: "get_data_update_easy",
+								uid: datas.wgsettings_taccount_username,
+								cookie: datas.wgsettings_taccount_cookie,
+								time: timestamp0,
+							},
+							method: "GET",
+							responseType: "text",
+							success: (response) => {
+								if (response.code == 200) {
+									const reqback = JSON.parse(response.data);
+									if (reqback["code"] == 200) {
+										if (reqback["info_v0"] == 1) {
+											this.$app.$def.taccountInit();
+											this.$app.$def.toTips(
+												"",
+												"登录状态已失效，请前往设置重新登录\nYour login session has expired. Please go to Settings to log in again."
+											);
+										}
+									}
+								}
+							},
+						});
+					}
+				},
+			});
 	},
 };
 </script>

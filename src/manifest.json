@@ -147,6 +147,10 @@
         "launchMode": "singleTask",
         "component": "index"
       },
+      "pages/ui/acts/settings/taccqrlogin": {
+        "launchMode": "singleTask",
+        "component": "index"
+      },
       "pages/ui/acts/settings/tacceditnick": {
         "launchMode": "singleTask",
         "component": "index"
