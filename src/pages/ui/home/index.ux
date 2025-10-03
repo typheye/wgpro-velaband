@@ -110,6 +110,7 @@ export default {
 		fc_v9: "#3c3c3c",
 		fc_v10: "#3c3c3c",
 		isPopUpdate: false,
+		isPopErrLogin: false,
 	},
 	ht(t, i) {
 		if (t) eval("this.fc_" + i + " = 'black'");
@@ -185,8 +186,10 @@ export default {
 				keys: ["wgsettings_taccount_username", "wgsettings_taccount_cookie"],
 				success: (datas) => {
 					if (
-						datas.wgsettings_taccount_cookie &&
-						datas.wgsettings_taccount_username
+						datas.wgsettings_taccount_cookie != null &&
+						datas.wgsettings_taccount_cookie.trim() !== "" &&
+						datas.wgsettings_taccount_username != null &&
+						datas.wgsettings_taccount_username.trim() !== ""
 					) {
 						fetch.fetch({
 							url: this.$app.$def.getTS("taccServerURL") + "api.php",
@@ -222,8 +225,10 @@ export default {
 				keys: ["wgsettings_taccount_username", "wgsettings_taccount_cookie"],
 				success: (datas) => {
 					if (
-						datas.wgsettings_taccount_cookie &&
-						datas.wgsettings_taccount_username
+						datas.wgsettings_taccount_cookie != null &&
+						datas.wgsettings_taccount_cookie.trim() !== "" &&
+						datas.wgsettings_taccount_username != null &&
+						datas.wgsettings_taccount_username.trim() !== ""
 					) {
 						const timestamp0 = Date.now();
 						fetch.fetch({
@@ -242,10 +247,13 @@ export default {
 									if (reqback["code"] == 200) {
 										if (reqback["info_v0"] == 1) {
 											this.$app.$def.taccountInit();
-											this.$app.$def.toTips(
-												"",
-												"登录状态已失效，请前往设置重新登录\nYour login session has expired. Please go to Settings to log in again."
-											);
+											if (!this.isPopErrLogin) {
+												this.isPopErrLogin = true;
+												this.$app.$def.toTips(
+													"",
+													"登录状态已失效，请前往设置重新登录\nYour login session has expired. Please go to Settings to log in again."
+												);
+											}
 										}
 									}
 								}

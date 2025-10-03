@@ -107,6 +107,8 @@
 	text-align: left;
 	font-size: 25px;
 	font-weight: bold;
+	lines: 1;				  /* 防止换行 */
+	text-overflow: ellipsis;  /* 用省略号表示溢出 */
 }
 
 .wgpro-item-texts-text2 {
@@ -337,6 +339,8 @@
 	padding-bottom: 3px;
 	border-radius: 15px;
 	margin-right: 3px;
+	lines: 1;				  /* 防止换行 */
+	text-overflow: ellipsis;  /* 用省略号表示溢出 */
 }
 
 .wgpro-msg-head-text-ip {
@@ -352,6 +356,8 @@
 	padding-bottom: 3px;
 	border-radius: 15px;
 	margin-right: 3px;
+	lines: 1;				  /* 防止换行 */
+	text-overflow: ellipsis;  /* 用省略号表示溢出 */
 }
 
 .wgpro-msg-head-text {
@@ -361,6 +367,8 @@
 	text-align: left;
 	font-size: 25px;
 	font-weight: bold;
+	lines: 1;				  /* 防止换行 */
+	text-overflow: ellipsis;  /* 用省略号表示溢出 */
 }
 
 .wgpro-msg-box {

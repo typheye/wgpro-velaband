@@ -191,7 +191,7 @@ export default {
 	async toRefresh() {
 		try {
 			const data = await this.readFileData();
-			this.tnow = this.uint8ArrayToUTF16String(data.buffer);
+			this.tnow = this.uint8ArrayToUTF16String(new Uint8Array(data.buffer));
 		} catch (error) {
 			//console.error("File read error:", error);
 			this.toBack();
@@ -239,7 +239,7 @@ export default {
 					this.value_fontColor = datas.wgsettings_td_fontColor;
 				if (datas.wgsettings_td_backgroundColor)
 					this.value_backgroundColor = datas.wgsettings_td_backgroundColor;
-				this.page_long = parseInt(this.calcTextNum());
+				this.page_long = parseInt(this.calcTextNum()) * 2;
 				this.page_total =
 					this.page_long > 0 ? Math.ceil(this.size / this.page_long) : 0;
 				this.saveProcess_read();
@@ -395,7 +395,7 @@ export default {
 		if (wnum > 2) wnum -= 2;
 		let hnum = Math.ceil(maxHeight / fontSize);
 		if (hnum > 1) hnum -= 1;
-		let num = (wnum * hnum);
+		let num = wnum * hnum;
 		if (num % 2 != 0) num += 1;
 		return this.$app.$def.formatDecimal(num, 0);
 	},
